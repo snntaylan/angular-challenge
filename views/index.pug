@@ -3,3 +3,22 @@ extends layout
 block content
   .ui.container.index-container
     h2.ui.header  Api Works
+
+      table(border='1')
+        tr
+          th(ng-click='sortColumn("id")' ng-class='sortClass("id")') Id
+          th(ng-click='sortColumn("city")' ng-class='sortClass("city")') City
+          th(ng-click='sortColumn("start_date")' ng-class='sortClass("start_date")') S.Date
+          th(ng-click='sortColumn("end_date")' ng-class='sortClass("end_date")') E.Date
+          th(ng-click='sortColumn("price")' ng-class='sortClass("price")') Price
+          th(ng-click='sortColumn("status")' ng-class='sortClass("status")') Status
+          th(ng-click='sortColumn("color")' ng-class='sortClass("color")') Color
+        tr(ng-repeat='item in items|orderBy:column:reverse')
+          td {{item.id}}
+          td {{item.city}}
+          td {{item.start_date}}
+          td {{item.end_date}}
+          td {{item.price}}
+          td {{item.status}}
+          td {{item.color}}
+          
