@@ -1,0 +1,55 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body.main, body.login{
+  background: #076547 !important;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.logo{
+  margin: 20% auto 0px;
+  text-align: center;
+  color: #FFF;
+  background-color: #2ECC40;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  line-height: 250px;
+  font-size: 40px;
+}
+
+.logo a{
+  color: #FFF;
+  font-weight: bold;
+}
+.logo a:hover, .logo a:focus{
+  color: #FFF;
+}
+.tinfo .indicator.green{
+  background-color: #3D9970;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.index-container{
+  margin-top: 20px;
+}
+.index-container .ui.header{
+  color: #FFF!important;
+}
+
+span.happy, span.sad{
+  display: none;
+}
