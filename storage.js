@@ -1,3 +1,4 @@
 var JSONdb = require('simple-json-db');
-var Storage = new JSONdb('/Users/mac/Documents/sms-fs-challenge/data.json');
+var Storage = new JSONdb('C:/workexample/sms/data.json');
+
 module.exports = Storage;

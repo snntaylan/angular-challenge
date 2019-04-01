@@ -4,17 +4,31 @@ var app = angular.module('smsChallengeApp',[]);
 // Controller
 app.controller('smsChallengeAppController',function($scope, $http){
       
-    $http.get('/api/sms?s=11/31/2015&e=11/31/2015')
-    .then(function(response) {
-        $scope.items = response.data;
-    });
-    
     // Object
     // column to sort
     $scope.column = 'id';
     
     // sort ordering (Ascending or Descending). Set true for desending
     $scope.reverse = false;   
+
+    $scope.formatDate = function(timestamp) {
+        var x=new Date(timestamp);
+        var dd = x.getDate();
+        var mm = x.getMonth()+1;
+        var yy = x.getFullYear();
+        return mm +"/" + dd+"/" + yy;
+     };
+
+    $scope.submit = function() {
+
+        start = this.formatDate(this.StartDate)
+        end = this.formatDate(this.EndDate)
+        $http.get('/api/sms?s='+start+'&e='+end)
+        .then(function(response) {
+            $scope.items = response.data;
+        });
+        
+      };
     
     // called on header click
     $scope.sortColumn = function(col){
